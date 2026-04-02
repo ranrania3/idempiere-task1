@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Task1
+Bundle-SymbolicName: org.ran.task1
+Bundle-Version: 1.0.0.qualifier
+Export-Package: org.ran.task1,
+ org.task1.factory
+Require-Bundle: org.adempiere.base;bundle-version="13.0.0",
+ org.adempiere.plugin.utils;bundle-version="13.0.0"
+Automatic-Module-Name: org.ran.task1
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Service-Component: MyModelFactory.xml
+IPO-Registered-Packages: migration/task1.zip
