@@ -26,7 +26,7 @@ public class MCallHistory extends X_RCall_History {
 
         if (newRecord) {
 
-            // Auto-select SalesRep linked to this BP
+            // auto-select sales rep linked to this BP
             if (getSalesRep_ID() == 0 && getC_BPartner_ID() > 0) {
                 int linkedSalesRepId = org.compiere.util.DB.getSQLValue(
                     get_TrxName(),
@@ -40,7 +40,7 @@ public class MCallHistory extends X_RCall_History {
                 }
             }
 
-            // Auto-populate BP default phone
+            // auto-populate BP default phone
             if ((getPhone() == null || getPhone().isEmpty()) && getC_BPartner_ID() > 0) {
                 MPhoneBook bpPhone = MPhoneBook.getDefaultForBPartner(
                     getCtx(), getC_BPartner_ID(), get_TrxName()
@@ -53,7 +53,7 @@ public class MCallHistory extends X_RCall_History {
                 }
             }
 
-            // Auto-populate SalesRep default phone
+            // auto-populate sales rep default phone
             if ((getPhone2() == null || getPhone2().isEmpty()) && getSalesRep_ID() > 0) {
                 int salesRepBPId = org.compiere.util.DB.getSQLValue(
                     get_TrxName(),

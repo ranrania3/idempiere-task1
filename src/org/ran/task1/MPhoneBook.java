@@ -31,7 +31,7 @@ public class MPhoneBook extends X_Rphone_Book {
     protected boolean beforeSave(boolean newRecord) {
         System.out.println("=== MPHONEBOOK BEFORESAVE CALLED ===");
 
-        // If this is the first phone for this BP, auto set as default
+        // if this is the first phone for this BP, auto set as default
         if (newRecord) {
             int existingCount = org.compiere.util.DB.getSQLValue(
                 get_TrxName(),
@@ -45,7 +45,7 @@ public class MPhoneBook extends X_Rphone_Book {
             }
         }
 
-        // If marked as default, clear all other defaults for same BP
+        // if marked as default, clear all other defaults for same BP
         if (isDefault()) {
             System.out.println("=== CLEARING OTHER DEFAULTS ===");
             org.compiere.util.DB.executeUpdateEx(
